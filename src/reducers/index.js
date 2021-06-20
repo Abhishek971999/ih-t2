@@ -3,11 +3,11 @@ import * as actionTypes from "../constants";
 const initialState = {
   timerLabel: "Pomodoro",
   isBusy: false,
-  breakValue: 0.1,
-  pomodoroValue: 0.1,
-  timerValue: 6,
+  breakValue: 5,
+  pomodoroValue: 25,
+  timerValue: 1500,
   sessionCount: 1,
-  totalSessionTime: 12,
+  totalSessionTime: 1800,
 };
 
 const reducer = (state = initialState, action) => {
@@ -36,13 +36,13 @@ const reducer = (state = initialState, action) => {
     case actionTypes.RESET_TOTAL_SESSION_TIME:
       return {
         ...state,
-        totalSessionTime: 12,
+        totalSessionTime: 1800,
       };
     case actionTypes.RESET_SESSION:
       return {
         ...state,
         sessionCount: 1,
-        totalSessionTime: 12,
+        totalSessionTime: 1800,
       };
     case actionTypes.RESET_TIMERS:
       return initialState;
